@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+        PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0/EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="Hibernate.modelos.Despacho" table="despacho">
+        <id column="id" name="id" type="integer"/>
+        <property name="num_despacho" />
+        <property name="piso"/>
+
+
+<!-- Ahora establecemos las relaciones contras tablas, relacion 1:1-->
+        <one-to-one name="profesor" cascade="all"/>
+<!--        <one-to-one name="profesor" cascade="all"/>  no es obligatorio borrar en cascada-->
+
+
+    </class>
+
+</hibernate-mapping>

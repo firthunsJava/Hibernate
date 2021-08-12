@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+        PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0/EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="Hibernate.modelos.Profesor" table="Profesor">
+        <id column="id" name="id" type="integer"/>
+        <property name="nombre" />
+        <property name="apellido1"/>
+        <property name="apellido2"/>
+
+<!-- Ahora establecemos las relaciones contras tablas, relacion 1:1-->
+<!--        // OJO QUE CUANDO CREAMOS LA CLASE DIRECCION Y DESPACHO NO HAY QUE OLVIDARSE DE LOS GETTERES Y SETTERS/-->
+        <one-to-one name="direccion" cascade="all"/>
+        <one-to-one name="despacho" cascade="all"/>
+
+
+    </class>
+
+</hibernate-mapping>
